@@ -1,0 +1,14 @@
+<div class="process-item-content row">
+    <div class="process-index col-xs-5 col-md-1 col-sm-2">
+        <span>#{{index + 1}}</span>
+    </div>
+    <div class="col-xs-5 col-md-3 col-sm-3">
+        <span><b>Id:</b> {{process.id}}</span>
+    </div>
+    <div class="col-xs-5 col-md-5 col-sm-6">
+            <span><b>Name:</b> {{process.name}}</span>
+    </div>
+    <div class="col-xs-9 col-md-3 col-sm-2">
+        <button type="button" (click)="stopProcess()" class="btn btn-primary">Stop</button>
+    </div>
+</div>

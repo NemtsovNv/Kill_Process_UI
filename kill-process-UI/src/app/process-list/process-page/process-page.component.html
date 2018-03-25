@@ -1,0 +1,11 @@
+<div class="content-wrapper">
+    <ul class="list-group process-list">
+        <li class="list-group-item" *ngFor="let item of processes; let idx = index;">
+            <process-item 
+                [process]="item"
+                [index]="idx"
+                (onStopProcess)="stopProcess($event)">
+            </process-item>
+        </li>
+    </ul>
+</div>
