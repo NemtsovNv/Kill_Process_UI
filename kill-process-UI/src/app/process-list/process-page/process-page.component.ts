@@ -36,7 +36,12 @@ export class ProcessPageComponent {
         }
       },
       error => {
-        this.toastr.error(error.error);
+        if(error.status === 500) {
+          this.toastr.error(error.error);
+        } else {
+          console.log(error);
+          this.toastr.error("Something went wrong. Please, contact your administrator");
+        }
     });
   }
 }

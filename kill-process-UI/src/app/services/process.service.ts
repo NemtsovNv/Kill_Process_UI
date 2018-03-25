@@ -9,10 +9,10 @@ export class ProcessService {
   constructor(private readonly http: HttpClient) { }
 
   public getProcessesList() {
-    return this.http.get<ProcessInfo[]>(AppConsts.BASE_API_ENDPOINT + AppConsts.GET_PROCESS);
+    return this.http.get<ProcessInfo[]>(`${AppConsts.BASE_API_ENDPOINT}/api/process`);
   }
 
   public stopProcess(id: number) {
-    return this.http.post<boolean>(AppConsts.BASE_API_ENDPOINT + AppConsts.GET_PROCESS, id);
+    return this.http.post<boolean>(`${AppConsts.BASE_API_ENDPOINT}/api/process`, id);
   }
 }
