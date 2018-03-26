@@ -32,8 +32,13 @@ export class ProcessPageComponent implements OnInit {
     this.processService.stopProcess(id).subscribe(
       data => {
         let index = this.processes.findIndex(x => x.id == id);
-        this.toastr.success(`Process ${this.processes[index].name} was successfully terminated.`);
-        this.processes.splice(index, 1);
+
+        if(index > -1) {
+          this.toastr.success(`Process ${this.processes[index].name} was successfully terminated.`);
+          this.processes.splice(index, 1);
+        } else {
+          this.toastr.error(`Element with index ${index} is missing in list. Please, update page and try again later.`);
+        }
       },
       error => this.handleError(error)
     );
