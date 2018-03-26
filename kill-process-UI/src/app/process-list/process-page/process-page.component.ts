@@ -31,7 +31,7 @@ export class ProcessPageComponent implements OnInit {
   public stopProcess(id: number) {
     this.processService.stopProcess(id).subscribe(
       data => {
-        let index = this.processes.findIndex(x => x.id == id);
+        let index = this.processes.findIndex(x => x.id === id);
 
         if(index > -1) {
           this.toastr.success(`Process ${this.processes[index].name} was successfully terminated.`);
